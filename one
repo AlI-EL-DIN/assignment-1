@@ -1,0 +1,17 @@
+import math
+import random
+
+def tanh(x):
+    exp_pos = math.exp(x)
+    exp_neg = math.exp(-x)
+    return (exp_pos - exp_neg) / (exp_pos + exp_neg)
+w1 = random.uniform(-0.5, 0.5)
+w2 = random.uniform(-0.5, 0.5)
+b1 = 0.5
+b2 = 0.7
+x1, x2 = 0.3, -0.8
+z1 = w1 * x1 + w2 * x2 + b1
+a1 = tanh(z1)
+z2 = w1 * a1 + w2 * a1 + b2
+a2 = tanh(z2)
+print("Network output:", a2)
